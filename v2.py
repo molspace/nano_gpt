@@ -38,6 +38,9 @@ with open('input.txt','r',encoding='UTF-8') as f:
 # unique characters that occur in the text
 chars = sorted(list(set(text)))
 vocab_size = len(chars)
+print("all the unique characters:", ''.join(chars))
+print(f"vocab size: {vocab_size:,}")
+
 
 # create a mapping from characters to integers
 stoi = {ch:i for i,ch in enumerate(chars)}
@@ -52,6 +55,8 @@ data = torch.tensor(encode(text),dtype=torch.long)
 n = int(0.9 * len(data))
 train_data = data[:n]
 val_data = data[n:]
+print(f"train has {len(train_ids):,} tokens")
+print(f"val has {len(val_ids):,} tokens")
 
 # generate a batch of data of inputs x and targets y
 def get_batch(split):
