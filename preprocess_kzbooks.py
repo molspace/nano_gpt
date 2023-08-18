@@ -8,7 +8,7 @@
 with open('kz_nagyz.txt','r',encoding='UTF-8') as f:
     data = f.read()
 
-data = data[:1000000]
+data = data[:2000000]
 
 print(f"length of dataset in characters: {len(data):,}")
 
@@ -19,5 +19,5 @@ vocab_size = len(chars)
 print("all the unique characters:", ''.join(chars))
 print(f"vocab size: {vocab_size:,}")
 
-with open('million_kz.txt','w',encoding='UTF-8') as f:
+with open('twomillion_kz.txt','w',encoding='UTF-8') as f:
     f.write(data)
