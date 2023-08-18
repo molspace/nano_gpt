@@ -31,8 +31,8 @@ dropout =0.2
 torch.manual_seed(42)
 
 # read it to inspect it
-#with open('kz_nagyz.txt','r',encoding='UTF-8') as f:
-with open('input.txt','r',encoding='UTF-8') as f:
+with open('million_kz.txt','r',encoding='UTF-8') as f:
+#with open('input.txt','r',encoding='UTF-8') as f:
     text = f.read()
 
 # unique characters that occur in the text
@@ -55,8 +55,8 @@ data = torch.tensor(encode(text),dtype=torch.long)
 n = int(0.9 * len(data))
 train_data = data[:n]
 val_data = data[n:]
-print(f"train has {len(train_ids):,} tokens")
-print(f"val has {len(val_ids):,} tokens")
+print(f"train has {len(train_data):,} tokens")
+print(f"val has {len(val_data):,} tokens")
 
 # generate a batch of data of inputs x and targets y
 def get_batch(split):
