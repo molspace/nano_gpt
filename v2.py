@@ -31,7 +31,7 @@ dropout =0.2
 torch.manual_seed(42)
 
 # read it to inspect it
-with open('million_kz.txt','r',encoding='UTF-8') as f:
+with open('twomillion_kz.txt','r',encoding='UTF-8') as f:
 #with open('input.txt','r',encoding='UTF-8') as f:
     text = f.read()
 
