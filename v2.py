@@ -239,6 +239,9 @@ for iter in range(max_iters):
     loss.backward()
     optimizer.step()
 
+# save trained model
+torch.save(m.state_dict(), 'model.pt')
+
 # generate from the model
 context = torch.zeros((1,1), dtype=torch.long, device=device)
 print(decode(m.generate(context,max_new_tokens=500)[0].tolist()))
